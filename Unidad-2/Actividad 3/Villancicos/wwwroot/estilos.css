@@ -1,0 +1,215 @@
+﻿html, body {
+	margin: 0;
+	background: url(images/back.jpg);
+	background-repeat: repeat-x;
+	width: 100%;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+header {
+	margin: auto;
+	width: 1200px;
+	background: url(images/header.jpg);
+	background-size: contain;
+	height: 323px;
+	color: white;
+}
+
+	header h1 {
+		text-align: center;
+		padding-top: 30px;
+		font-size: 50pt;
+	}
+
+	header h2 {
+		text-align: center;
+		padding: 10px;
+	}
+
+main {
+	padding-bottom: 30px;
+	width: 700px;
+	margin: auto;
+}
+
+	main ul {
+		column-count: 2;
+		list-style: none;
+	}
+
+		main ul li {
+			margin-bottom: 10px;
+			/**/
+		}
+
+
+
+			main ul li a {
+				text-decoration: none;
+				color: green;
+				line-height: 35px;
+				display: block;
+				background-image: url(images/esfera3.png);
+				background-repeat: no-repeat;
+				padding-left: 40px;
+			}
+
+			main ul li:nth-child(2n) a {
+				background-image: url(images/esfera1.png);
+			}
+
+			main ul li:nth-child(3n) a {
+				background-image: url(images/esfera2.png);
+			}
+
+footer {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	margin-top: 20px;
+	background: url(images/back.jpg);
+	height: 30px;
+	background-position-y: -150px;
+	line-height: 30px;
+	color: white;
+	text-align: center;
+}
+
+main h2 {
+	font-size: 20pt;
+	margin: 0;
+	color: #960000;
+	font-weight: normal;
+	padding: 0 40px;
+}
+
+main h3 {
+	padding: 0 40px;
+	font-size: 11pt;
+	margin: 0;
+	color: green;
+	font-weight: lighter;
+}
+
+article {
+	padding: 0 40px;
+	line-height: 30px;
+}
+
+iframe {
+	padding: 10px 40px;
+}
+
+article p {
+	margin-bottom: 20px;
+}
+
+
+
+nav {
+	text-align: right;
+	padding: 10px;
+}
+
+section {
+	width: 100%;
+	box-shadow: 1px 1px 10px rgba(0,0,0,.7);
+	min-height: 400px;
+	background-color: white;
+	margin: 30px 0 0 0;
+	padding-bottom: 20px;
+}
+
+table {
+	width: 100%;
+	border-spacing: 0;
+}
+
+caption, .caption {
+	background-color: green;
+	text-align: left;
+	padding-bottom: 15px;
+	border-radius: 3px 3px 0 0;
+	height: 50px;
+}
+
+
+	caption h2, .caption h2 {
+		color: white;
+		margin: 10px;
+		font-size: x-large;
+		font-weight: normal;
+		line-height: 50px;
+		float: left;
+	}
+
+	caption a {
+		height: 35px;
+		display: block;
+		float: right;
+		margin: 17px;
+		background-color: darkred;
+		line-height: 35px;
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+		font-size: small;
+		text-decoration: none;
+		color: white;
+		padding: 0 10px;
+	}
+
+th {
+	text-align: left;
+	padding: 10px;
+	font-size: small;
+	border-bottom: 1px solid lightgray;
+}
+
+tr {
+	height: 50px;
+}
+
+td {
+	padding: 10px;
+	border-bottom: 1px solid lightgray;
+}
+
+	td a {
+		text-decoration: none;
+		color: darkred;
+		font-size: x-large;
+	}
+
+form label, form input, form textarea {
+	display: block;
+	text-align: left;
+	clear: both;
+	padding: 5px;
+	width: calc(100% - 20px);
+	box-sizing: border-box;
+	margin: 0 10px;
+	resize: none;
+}
+
+.botones {
+	text-align: right;
+	margin:10px;
+}
+
+	.botones a, .botones input {
+		border:0;
+		display: inline-block;
+		height: 35px;
+		background-color: darkred;
+		line-height: 35px;
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+		font-size: small;
+		text-decoration: none;
+		color: white;
+		padding: 0 20px;
+		width:auto;
+	}

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30204.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paso de parametros", "Paso de parametros\Paso de parametros.csproj", "{9C07DC71-3303-4123-A67D-7D94C907FCDF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9C07DC71-3303-4123-A67D-7D94C907FCDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C07DC71-3303-4123-A67D-7D94C907FCDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C07DC71-3303-4123-A67D-7D94C907FCDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C07DC71-3303-4123-A67D-7D94C907FCDF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {398900BB-3757-4157-8B7F-30A629D89F76}
+	EndGlobalSection
+EndGlobal

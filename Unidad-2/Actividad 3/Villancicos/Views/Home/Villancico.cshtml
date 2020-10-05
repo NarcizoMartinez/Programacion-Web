@@ -1,0 +1,28 @@
+﻿@model Villancicos.Models.Villancico
+    
+<html>
+    <head>
+        <link href="estilos.css" rel="stylesheet" />
+        <title>Villancicos</title>
+    </head>
+        <header>
+            <h1>Villancicos</h1>
+            <h2>Feliz Navidad</h2>
+        </header>
+        <body>
+            <nav>
+                <a href="javascript:window.history.back();">Regresar</a>
+            </nav>
+            <h2>@Model.Nombre</h2>
+            <h3> @Model.Compositor,@(Model.Anyo==null?"":@Model.Anyo.ToString())</h3>
+
+            <iframe width="560" height="315" src="@Model.VideoUrl" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+            <article>
+                @Html.Raw(@Model.Letra)
+            </article>
+        </body>
+        <footer>
+            Programación Web - Unidad 2
+        </footer>
+        </html>

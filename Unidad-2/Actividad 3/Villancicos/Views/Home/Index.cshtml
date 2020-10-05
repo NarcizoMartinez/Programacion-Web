@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Villancicos.Models.Villancico>
+
+<html>
+<head>
+    <link href="estilos.css" rel="stylesheet" />
+    <title>Villancicos</title>
+</head>
+<body>
+
+    <header>
+        <h1>Villancicos</h1>
+        <h2>Feliz Navidad</h2>
+    </header>
+    <main>
+        <ul>
+            @foreach (var villancico in Model)
+            {
+                <li><a href="~/Home/Villancico/@villancico.Id">@villancico.Nombre</a></li>
+            }
+
+        </ul>
+    </main>
+    <footer>
+        Programación Web - Unidad 2
+    </footer>
+</body>
+</html>
+
