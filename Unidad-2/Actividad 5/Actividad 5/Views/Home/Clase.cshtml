@@ -1,7 +1,35 @@
-﻿
+﻿@model IEnumerable<Actividad_5.Models.Clase>
 @{
-    ViewData["Title"] = "Clase";
+   Layout = "Layout";
 }
 
-<h1>Clase</h1>
+@foreach (var c in Model)
+{
+    <h1>@c.Nombre</h1>
+
+    <ul class="especies">
+        @foreach (var e in c.Especies)
+        {
+            <li>
+
+                <div>
+                    <img src="~/especies/@(e.Id).jpg">
+                </div>
+                <h2>@e.Especie</h2>
+                <p><label>Habitat: </label>@e.Habitat</p>
+                <p><label>Peso: </label>@e.Peso</p>
+                <p><label>Tamaño: </label>@e.Tamaño</p>
+                <p>@e.Observaciones</p>
+                
+
+            </li>
+            }
+        </ul>
+}
+
+
+
+
+
+
 

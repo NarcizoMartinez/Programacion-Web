@@ -4,7 +4,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Actividad_5.Models;
-using Actividad_5.Models.ViewModels;
 using Microsoft.EntityFrameworkCore;
 
 namespace Actividad_5.Controllers
@@ -17,13 +16,20 @@ namespace Actividad_5.Controllers
             var cl= context.Clase.OrderBy(x => x.Nombre).ToList();
             return View(cl);
         }
-        public IActionResult Clase()
+        [Route("Clase/{id}")]
+        public IActionResult Clase(string Id)
         {
-           // ClaseViewModel vm = new ClaseViewModel();
             animalesContext context = new animalesContext();
-            var clases = context.Especies.Include(x => x.Especie).Select(x=> new ClaseViewModel { NombreClase=x.Especie});
-
-            return View(clases);
+            var n = Id.Replace('-', ' ').ToUpper();
+            var clases = context.Clase.Include(x => x.Especies).Where(x => x.Nombre.ToUpper() == n.ToUpper()).OrderBy(x => x.Nombre);
+            if (clases.Count() == 0)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                return View(clases);
+            }  
         }
     }
 }

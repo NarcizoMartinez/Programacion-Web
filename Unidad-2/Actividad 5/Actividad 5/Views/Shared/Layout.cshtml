@@ -1,4 +1,4 @@
-﻿@model List<Actividad_5.Models.Clase>
+﻿@inject Actividad_5.Services.ClaseService servicio
 <html>
 <head>
     <title>ZooPlanet</title>
@@ -14,13 +14,10 @@
                 <li>
                     <a href="#">Clasificación</a>
                     <ul>
-                        <li><a href="reptiles.html">Reptiles</a></li>
-                        <li><a href="reptiles.html">Reptiles</a></li>
-                        <li><a href="reptiles.html">Reptiles</a></li>
-                        <li><a href="reptiles.html">Reptiles</a></li>
-                        <li><a href="reptiles.html">Reptiles</a></li>
-                        <li><a href="reptiles.html">Reptiles</a></li>
-                        <li><a href="reptiles.html">Reptiles</a></li>
+                        @foreach (var item in servicio.Clases)
+                        {
+                          <li><a href="~/Clase/@item.Nombre">@item.Nombre</a></li>
+                        }
                     </ul>
                 </li>
             </ul>

@@ -31,16 +31,16 @@
 <h1>Clasificación de los vertebrados</h1>
 
 <div class="clases">
-    <div>
-        <a href="reptiles.html">
-            @foreach (var cl in Model)
-            {
-                <img src="~/clases/@(cl.Id).jpg">
-                <h1>@cl.Nombre</h1>
-                <p>@cl.Descripcion</p>
-            }
-
-        </a>
-    </div>
+        @foreach (var cl in Model)
+        {
+            <div>
+                <a href="~/Clase/@cl.Nombre">
+                    <img src="~/clases/@(cl.Id).jpg">
+                    <h1>@cl.Nombre</h1>
+                    <p>@cl.Descripcion</p>
+                    
+                </a>
+            </div>
+         }
 </div>
 

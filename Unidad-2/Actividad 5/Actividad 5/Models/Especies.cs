@@ -12,7 +12,6 @@ namespace Actividad_5.Models
         public double? Peso { get; set; }
         public int? Tamaño { get; set; }
         public string Observaciones { get; set; }
-
         public virtual Clase IdClaseNavigation { get; set; }
     }
 }
