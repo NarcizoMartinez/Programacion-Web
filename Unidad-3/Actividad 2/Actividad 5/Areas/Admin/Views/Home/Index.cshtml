@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Actividad_5.Models.Especies>
+@{
+    Layout = "Layout";
+    int x = 1;
+}
+
+<h1>Lista de Especies</h1>
+
+<table>
+    <colgroup>
+        <col style="width:50px" />
+        <col style="width:40px" />
+        <col />
+        <col style="width:50%" />
+    </colgroup>
+    <caption>
+        <a href="~/Admin/Home/Agregar"><i class="fa fa-plus"></i> Agregar Especie</a>
+    </caption>
+    <thead>
+        <tr>
+            <th>#</th>
+            <th colspan="2">Especie</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var especie in Model)
+        {
+            <tr>
+                <td class="center">@(x++)</td>
+                <td style="width:40px"><img src="~/clases/@(especie.IdClase).png"></td>
+                <td>@especie.Especie</td>
+                <td class="center">
+                    <a href="/Admin/Home/Editar/@especie.Id"><i class="fa fa-edit"></i> Editar</a>
+                    <a href="/Admin/Home/Eliminar/@especie.Id"><i class="fa fa-remove"></i> Eliminar</a>
+                    <a href="/Admin/Home/Imagen/@especie.Id"><i class="fa fa-image"></i> Imagen</a>
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+
