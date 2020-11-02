@@ -24,7 +24,7 @@ namespace Actividad_5.Controllers
             ClaseRepository crepo = new ClaseRepository(context);
             return View(crepo.GetAll().ToList());
         }
-        [Route("{Id}")]
+        [Route("/Clase/{Id}")]
         public IActionResult Clase(string Id)
         {
             ViewBag.Clase = Id;

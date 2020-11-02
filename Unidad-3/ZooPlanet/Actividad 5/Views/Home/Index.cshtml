@@ -1,4 +1,4 @@
-﻿@model List<Actividad_5.Models.Clase> 
+﻿@model IEnumerable<Actividad_5.Models.Clase> 
 @{
    Layout= "Layout";
 }
@@ -34,7 +34,7 @@
         @foreach (var cl in Model)
         {
             <div>
-                <a href="~/Clase/@cl.Nombre">
+                <a href="~/@cl.Nombre">
                     <img src="~/clases/@(cl.Id).jpg">
                     <h1>@cl.Nombre</h1>
                     <p>@cl.Descripcion</p>
