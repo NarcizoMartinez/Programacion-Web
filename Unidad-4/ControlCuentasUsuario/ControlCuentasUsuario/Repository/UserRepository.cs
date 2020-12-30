@@ -13,6 +13,7 @@ namespace ControlCuentasUsuario.Repository
         {
             Context = _context;
         }
+
         public Cuentum GetById(int id)
         {
             return Context.Cuenta.FirstOrDefault(x => x.IdUser == id);
