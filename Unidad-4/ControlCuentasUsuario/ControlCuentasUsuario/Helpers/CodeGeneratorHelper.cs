@@ -12,7 +12,7 @@ namespace ControlCuentasUsuario.Helpers
             Random r = new Random();
             int code = r.Next(1000, 9999);
             int code2 = r.Next(1000, 9999);
-            return (code + code2); 
+            return (code + code2);
         }
     }
 }
