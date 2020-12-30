@@ -1,5 +1,13 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{ 
+    Layout = "Layout";
 }
+    <main>
+        <form action="~/Home/Login" method="post">
+            <input type="email" placeholder="Email Address" required />
+            <input type="password" placeholder="Password" required />
+            <input type="checkbox" name="hold" value="true" />
+            <input type="submit" value="Sign In" />
+        </form>
+        @Html.ValidationSummary()
+        <a href="~/Home/RecoverPass">Forgot your Password?</a>
+    </main>
