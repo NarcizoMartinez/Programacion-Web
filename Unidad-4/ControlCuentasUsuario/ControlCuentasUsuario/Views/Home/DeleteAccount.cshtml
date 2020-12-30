@@ -1,5 +1,13 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{ 
+    Layout = "Layout";
 }
+    <main>
+        <h1>Eliminar cuenta </h1>
+        <a href="~/Home/Index">No. Volver a mi perfil</a>
+        <form action="~/Home/DeleteAccount" method="post">
+            <input type="text" name="email" value="@User.Claims.FirstOrDefault(x=>x.Type=="Email").Value"/>
+            <input type="password" name="pass" placeholder="Contrasena" required/>
+            @Html.ValidationSummary()
+            <input type="submit" value="Si, eliminar cuenta"/>
+        </form>
+    </main>

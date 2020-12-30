@@ -1,0 +1,19 @@
+﻿body, html{
+    height:100%;
+}
+body {
+    margin: 0;
+    padding: 0;
+    background: #2C2F33;
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    justify-content:center;
+    align-content:center;
+}
+footer {
+    background: #10141a;
+}
+form-box{
+    font-family:Pixel-Art;
+}

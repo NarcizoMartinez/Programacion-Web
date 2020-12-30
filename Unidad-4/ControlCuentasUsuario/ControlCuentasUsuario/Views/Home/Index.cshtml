@@ -2,5 +2,26 @@
     Layout = "Layout";
 }
 <main>
+    <table>
+        <tr>
+            <td>
+                <section>
+                    <h1>Datos de la cuenta</h1>
+                    <label>Nombre de la cuenta: </label>
+                    <label>@User.Claims.FirstOrDefault(x => x.Type == "Username").Value</label>
 
+                    <label>Correo Electronico: </label>
+                    <label>@User.Claims.FirstOrDefault(x => x.Type == "Email").Value</label>
+                </section>
+            </td>
+            <td>
+                <section>
+                    <h2>Opciones</h2>
+                    <a href="~/Home/ChangePass">Cambiar contrasena</a>
+                    <a href="~/Home/Logout">Cerrar Sesion</a>
+                    <a href="~/Hom/DeleteAccount">Eliminar cuenta</a>
+                </section>
+            </td>
+        </tr>
+    </table>
 </main>

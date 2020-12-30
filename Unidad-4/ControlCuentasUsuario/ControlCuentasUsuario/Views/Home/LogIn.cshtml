@@ -1,8 +1,10 @@
-﻿@{ 
+﻿@model ControlCuentasUsuario.Models.Cuentum
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{ 
     Layout = "Layout";
 }
     <main>
-        <form action="~/Home/Login" method="post">
+        <form action="~/Home/Login" method="post" class="form-box">
             <input type="email" placeholder="Email Address" required />
             <input type="password" placeholder="Password" required />
             <input type="checkbox" name="hold" value="true" />
@@ -10,4 +12,5 @@
         </form>
         @Html.ValidationSummary()
         <a href="~/Home/RecoverPass">Forgot your Password?</a>
+        <a href="~/Home/Register">Register an account</a>
     </main>

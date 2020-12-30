@@ -1,5 +1,13 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model  ControlCuentasUsuario.Models.Cuentum
+@{ 
+    Layout = "Layout";
+    }
+    <main>
+        <a href="~/Home/Login">Volver a Iniciar Sesion</a>
+        <h1>Recuperar contrasena</h1>
+        <p>Para recuperar su contrasena siga estos pasos:</p>
+        <form action="~/Home/RecoverPass" method="post">
+            <input type="email" placeholder="Correo electronico" required />
+            <input type="submit" value="Enviar Correo" />
+        </form>
+    </main>
