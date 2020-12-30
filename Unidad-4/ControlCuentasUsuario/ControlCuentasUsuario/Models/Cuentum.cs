@@ -13,5 +13,6 @@ namespace ControlCuentasUsuario.Models
         public string Password { get; set; }
         public int Token { get; set; }
         public ulong? Active { get; set; }
+
     }
 }
