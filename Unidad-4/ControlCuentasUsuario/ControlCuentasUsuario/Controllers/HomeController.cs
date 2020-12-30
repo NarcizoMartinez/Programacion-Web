@@ -45,7 +45,7 @@ namespace ControlCuentasUsuario.Controllers
                 if (datos.Active == 1)
                 {
                     List<Claim> info = new List<Claim>();
-                    info.Add(new Claim(ClaimTypes.Name, "Usuario" + datos.Username));
+                    info.Add(new Claim(ClaimTypes.Name, datos.Username));
                     info.Add(new Claim(ClaimTypes.Role, "User"));
                     info.Add(new Claim("Email", datos.Email));
                     info.Add(new Claim("Username", datos.Username));
