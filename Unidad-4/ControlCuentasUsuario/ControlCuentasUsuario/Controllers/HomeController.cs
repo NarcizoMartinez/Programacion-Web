@@ -86,7 +86,7 @@ namespace ControlCuentasUsuario.Controllers
         }
         [HttpPost]
         [AllowAnonymous]
-        public IActionResult register(Cuentum user, string pass, string pass2)
+        public IActionResult Register(Cuentum user, string pass, string pass2)
         {
             usuariosContext context = new usuariosContext();
             UserRepository<Cuentum> repos = new UserRepository<Cuentum>(context);

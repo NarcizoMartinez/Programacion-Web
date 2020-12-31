@@ -6,12 +6,12 @@
     <main>
         <h1>Crear Una cuenta</h1>
         <a href="~/Home/Index">Volver</a>
-        <form action="~/Home/Register" method="post">
+        <form class="form-box2" action="~/Home/Register" method="post">
             <input type="text" asp-for="Username" placeholder="Nombre de usuario" required />
             <input type="email" asp-for="Email" placeholder="Correo Electronico" required />
             <input type="password" asp-for="Password" placeholder="Crear contrasena" required />
             <input type="password" asp-for="Password" placeholder="Confirmar Contrasena" required />
             @Html.ValidationSummary()
-            <input type="submit" value="Register" onclick="registrar()" />
+            <input type="submit" value="Registrar" />
         </form>
     </main>
