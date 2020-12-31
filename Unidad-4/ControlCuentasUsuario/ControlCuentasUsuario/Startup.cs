@@ -21,12 +21,11 @@ namespace ControlCuentasUsuario
                     options.LoginPath = "/Home/Login";
                     options.LogoutPath = "/Home/Logout";
                     options.AccessDeniedPath = "/Home/Denied";
-
+                    options.Cookie.Name = "Nav";
                 }
                 );
             services.AddMvc();
         }
-
         public IWebHostEnvironment Environment { get; set; }
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
