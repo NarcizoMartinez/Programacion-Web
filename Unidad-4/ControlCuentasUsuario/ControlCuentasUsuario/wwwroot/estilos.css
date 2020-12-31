@@ -13,7 +13,7 @@ body {
     justify-content: center;
     align-content: center;
 }
-main {
+main{
     background: #2C2F33;
     width: 300px;
     height: 400px;
@@ -22,12 +22,11 @@ main {
     color:white;
     font-family:'Champagne & Limousines';
 }
-:-ms-input-placeholder{
-    color:white;
-}
 .form-box input[type=email],
 .form-box input[type=password],
 .form-box input[type=submit] {
+    align-content:center;
+    text-align:center;
     border: 0;
     background: none;
     display: block;
@@ -54,25 +53,87 @@ main {
      background: #c4d1ff;
      width:280px;
 }
- .form-label{
-     color:white;
- }
-.main-hyperlink a {
+ a{
     color: #7289DA;
     display: block;
     margin: 5px auto;
+    margin:5px auto;
 }
+.form-box2 input[type=text],
+.form-box2 input[type=email],
+.form-box2 input[type=password],
+.form-box2 input[type=submit]{
+    text-align:center;
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    padding: 14px 10px;
+    border: 2px solid #17191c;
+    width: 200px;
+    outline: none;
+    color: white;
+    border-radius: 20px;
+    transition: 0.25s;
+    height:40px;
+}
+.form-box2 input[type=text]:focus,
+.form-box2 input[type=email]:focus,
+.form-box2 input[type=password]:focus {
+    width: 280px;
+    border-color: #7289DA;
+}
+.form-box2 input[type=submit] {
+    border: 0;
+    background: #7289DA;
+    cursor: pointer;
+}
+.form-box2 input[type=submit]:hover{
+    background:#c4d1ff;
+    width:280px;
+}
+.form-box3 input[type=email ],
+.form-box3 input[type=submit] {
+    text-align:center;
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    padding: 14px 10px;
+    border: 2px solid #17191c;
+    width: 200px;
+    outline: none;
+    color: white;
+    border-radius: 20px;
+    transition: 0.25s;
+    height: 50px;
+}
+.form-box3 input[type=email]:focus{
+    width:280px;
+    border-color:#7289DA;
+}
+.form-box3 input[type=submit]{
+    border:0;
+    background:#7289DA;
+    cursor:pointer;
+}
+.form-box3 input[type=submit]:hover{
+    background: #c4d1ff;
+    width: 280px;
+}
+
+
 footer {
     display: flex;
     position: fixed;
     bottom: 0;
-    left:0;
-    right:0;
+    left: 0;
+    right: 0;
     height: 60px;
     width: 100%;
     background: #2C2F33;
     border-top: 2px solid #17191c;
     color: white;
-    justify-content:center;
-    align-items:center;
+    justify-content: center;
+    align-items: center;
 }
