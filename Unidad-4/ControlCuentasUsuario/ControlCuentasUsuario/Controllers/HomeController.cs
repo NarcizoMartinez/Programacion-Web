@@ -35,7 +35,7 @@ namespace ControlCuentasUsuario.Controllers
         }
         [HttpPost]
         [AllowAnonymous]
-        public async Task<IActionResult> SignUp(Cuentum user, bool persistent)
+        public async Task<IActionResult> LogIn(Cuentum user, bool persistent)
         {
             usuariosContext context = new usuariosContext();
             UserRepository<Cuentum> repos = new UserRepository<Cuentum>(context);
@@ -44,11 +44,13 @@ namespace ControlCuentasUsuario.Controllers
             {
                 if (datos.Active == 1)
                 {
-                    List<Claim> info = new List<Claim>();
-                    info.Add(new Claim(ClaimTypes.Name, datos.Username));
-                    info.Add(new Claim(ClaimTypes.Role, "User"));
-                    info.Add(new Claim("Email", datos.Email));
-                    info.Add(new Claim("Username", datos.Username));
+                    List<Claim> info = new List<Claim>
+                    {
+                        new Claim(ClaimTypes.Name, datos.Username),
+                        new Claim(ClaimTypes.Role, "User"),
+                        new Claim("Email", datos.Email),
+                        new Claim("Username", datos.Username)
+                    };
                     var claimIdentity = new ClaimsIdentity(info, CookieAuthenticationDefaults.AuthenticationScheme);
                     var claimMain = new ClaimsPrincipal(claimIdentity);
                     if (persistent == true)
@@ -77,7 +79,7 @@ namespace ControlCuentasUsuario.Controllers
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync();
-            return RedirectToAction("Login");
+            return RedirectToAction("SignUp");
         }
         [AllowAnonymous]
         public IActionResult Register()
@@ -106,16 +108,19 @@ namespace ControlCuentasUsuario.Controllers
                         user.Active = 0;
                         repos.Insert(user);
                         MailMessage message = new MailMessage();
-                        message.From = new MailAddress("sistemascomputacionales7gmail.com", "Skyblock Dream");
+                        message.From = new MailAddress("senorvinter@gmail.com", "Skyblock Dream");
                         message.To.Add(user.Email);
-                        message.Subject = "Por favor confirma tu direccion de correo electronico en Skyblock Dream";
+                        message.Subject = "Por favor confirma tu direccion de correo electronico de Skyblock Dream";
                         string text = System.IO.File.ReadAllText(Environment.WebRootPath + "/ConfirmEmail.html");
-                        message.Body = text.Replace("{##codigo##}", user.Token.ToString());
+                        message.Body = text.Replace("{##code##}", user.Token.ToString());
                         message.IsBodyHtml = true;
-                        SmtpClient client = new SmtpClient("smtp.gmail.com", 587);
-                        client.EnableSsl = true;
-                        client.UseDefaultCredentials = false;
-                        client.Credentials = new NetworkCredential("sistemascomputacionales7g.com", "sistemas7");
+
+                        SmtpClient client = new SmtpClient("smtp.gmail.com", 587)
+                        {
+                            EnableSsl = true,
+                            UseDefaultCredentials = false,
+                            Credentials = new NetworkCredential("senorvinter@gmail.com", "dgrayman5")
+                        };
                         client.Send(message);
                         return RedirectToAction("Activate");
                     }
@@ -129,6 +134,7 @@ namespace ControlCuentasUsuario.Controllers
             catch (Exception ex)
             {
                 ModelState.AddModelError("", ex.Message);
+               // Console.WriteLine(ex.InnerException.Message);
                 return View(user);
             }
         }
@@ -151,18 +157,18 @@ namespace ControlCuentasUsuario.Controllers
                 {
                     us.Active = 1;
                     repos.Edit(us);
-                    return RedirectToAction("SignUp");
+                    return RedirectToAction("LogIn");
                 }
                 else
                 {
                     ModelState.AddModelError("", "El token ingresado no coincide.");
-                    return View((object)code);
+                    return View(code);
                 }
             }
             else
             {
                 ModelState.AddModelError("", "El usuario no existe.");
-                return View((object)code);
+                return View(code);
             }
         }
         [Authorize(Roles = "User")]
@@ -200,7 +206,7 @@ namespace ControlCuentasUsuario.Controllers
                     {
                         user.Password = HashHelper.GetHash(newpass);
                         repos.Edit(user);
-                        return RedirectToAction("SingUp");
+                        return RedirectToAction("LogIn");
                     }
                 }
             }
@@ -227,26 +233,28 @@ namespace ControlCuentasUsuario.Controllers
                 if (user!=null)
                 {
                     var temp = CodeGeneratorHelper.GetCode();
-                    MailMessage message = new MailMessage("sistemascomputacionales7@gmail.com", "Slyblock Dream");
-                    message.From = new MailAddress("sistemascomputacionales7g@gmail.com", "Skyblock Dream");
+                    MailMessage message = new MailMessage("senorvinter@gmail.com", "Slyblock Dream");
+                    message.From = new MailAddress("senorvinter@gmail.com", "Skyblock Dream");
                     message.To.Add(email);
                     message.Subject = "Recupera tu contraseña de Skyblock Dream";
                     string text = System.IO.File.ReadAllText(Environment.WebRootPath + "/Recover.html");
-                    message.Body = text.Replace("{##contraTemp##}", temp.ToString());
+                    message.Body = text.Replace("{##codeTemp##}", temp.ToString());
                     message.IsBodyHtml = true;
 
-                    SmtpClient cliente = new SmtpClient("smtp.gmail.com", 587);
-                    cliente.EnableSsl = true;
-                    cliente.UseDefaultCredentials = false;
-                    cliente.Credentials = new NetworkCredential("sistemascomputacionales7g@gmail.com", "sistemas7g");
+                    SmtpClient cliente = new SmtpClient("smtp.gmail.com", 587)
+                    {
+                        EnableSsl = true,
+                        UseDefaultCredentials = false,
+                        Credentials = new NetworkCredential("senorvinter@gmail.com", "dgrayman5")
+                    };
                     cliente.Send(message);
                     user.Password = HashHelper.GetHash(temp.ToString());
                     repos.Edit(user);
-                    return RedirectToAction("SignUp");
+                    return RedirectToAction("LogIn");
                 }
                 else
                 {
-                    ModelState.AddModelError("", "El correo que ingreso no se encuentra registrado :(");
+                    ModelState.AddModelError("", "El correo" +email+ " no se encuentra registrado.");
                     return View();
                 }
             }
@@ -282,7 +290,7 @@ namespace ControlCuentasUsuario.Controllers
                         return View();
                     }
                 }
-                return RedirectToAction("SignUp");
+                return RedirectToAction("LogIn");
             }
             catch (Exception)
             {

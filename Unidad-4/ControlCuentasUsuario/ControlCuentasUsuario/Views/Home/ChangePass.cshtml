@@ -6,9 +6,9 @@
     <main>
         <a href="~/Home/Index">Regresar a perfil</a>
         <h1>Cambiar mi contrasena</h1>
-        <form action="~/Home/ChangePass" method="post">
-            <input type="password" asp-for="Password" name="pass" placeholder="Contrasena" required/>
-            <input type="text" value="@User.Claims.FirstOrDefault(x=>x.Type=="Email").Value" />
+        <form action="~/Home/ChangePass" method="post">          
+            <input type="email" name="email" value="@User.Claims.FirstOrDefault(x=>x.Type=="Email").Value"/>
+            <input type="password" asp-for="Password" name="pass" placeholder="Contrasena" required />
             <input type="password" name="newpass" placeholder="Nueva Contrasena" required/>
             <input type="password" name="newpassconfirm" placeholder="Confirme su nueva contrasena" required/>
             @Html.ValidationSummary()
