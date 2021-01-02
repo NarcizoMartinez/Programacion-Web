@@ -294,7 +294,7 @@ namespace ControlCuentasUsuario.Controllers
             }
             catch (Exception)
             {
-                ModelState.AddModelError("", "Ha ocurrido un error, por favor intentelo de nuevo en un par de minutos");
+                ModelState.AddModelError("", "Ha ocurrido un error, por favor intentelo de nuevo en un par de minutos.");
                 return View();
             }
         }
