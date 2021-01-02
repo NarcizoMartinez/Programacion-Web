@@ -1,0 +1,21 @@
+﻿@model ControlCuentasUsuario.Models.Cuentum
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{ 
+    Layout = "Layout";
+}
+    <main>
+        <form action="~/Home/Login" method="post" class="form-box">
+            <h1 class="form-title">Log In</h1>
+            <input type="email" placeholder="Email Address" asp-for="Email" required />
+            <input type="password" placeholder="Password" asp-for="Password" required />
+            <input type="checkbox" name="persistent" value="true" />
+            <label class="form-label">Mantener sesion iniciada</label>
+            <input type="submit" value="Sign In" />
+        </form>
+        @Html.ValidationSummary()
+    <div class="main-hyperlink">
+        <a href="~/Home/RecoverPass">Forgot your Password?</a>
+        <a href="~/Home/Register">Register an account</a>
+    </div>
+       
+    </main>
