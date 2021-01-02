@@ -1,0 +1,13 @@
+﻿@model ControlCuentasUsuario.Models.Cuentum
+@{
+    Layout = "Layout";
+}
+    <main>
+
+        <h1>Activar cuenta</h1>
+        <p>Para activar su cuenta por favor introduzca el codigo que le fue enviado a su direccion de correo electronico.</p>
+        <form action="~/Home/Activate" method="post" class="form-box4">
+            <input type="text" name="code" required placeholder="Codigo"/>
+            <input type="submit" name="activate" value="Confirmar"/>
+        </form>
+    </main>

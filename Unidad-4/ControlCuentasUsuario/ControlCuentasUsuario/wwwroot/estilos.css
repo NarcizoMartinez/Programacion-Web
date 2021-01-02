@@ -1,0 +1,198 @@
+﻿body, html {
+    height: 100%;
+}
+body {
+    margin: 0;
+    padding: 0;
+    background-image:url("Images/background.jpg");
+    background-position:center;
+    background-size:cover;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}
+main{
+    background: #2C2F33;
+    width: 300px;
+    height: 400px;
+    align-content:center;
+    text-align:center;
+    color:white;
+    font-family:'Champagne & Limousines';
+}
+.form-box input[type=email],
+.form-box input[type=password],
+.form-box input[type=submit] {
+    align-content:center;
+    text-align:center;
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    padding: 14px 10px;
+    border: 2px solid #17191c;
+    width: 200px;
+    outline: none;
+    color: white;
+    border-radius: 20px;
+    transition: 0.25s;
+}
+.form-box input[type=email]:focus,
+.form-box input[type=password]:focus {
+    width: 280px;
+    border-color: #7289DA;
+    }
+.form-box input[type=submit] {
+    border: 0;
+    background: #7289DA;
+    cursor: pointer;
+}
+ .form-box input[type=submit]:hover {
+     background: #c4d1ff;
+     width:280px;
+}
+ a{
+    color: #7289DA;
+    display: block;
+    margin: 5px auto;
+    margin:5px auto;
+}
+.form-box2 input[type=text],
+.form-box2 input[type=email],
+.form-box2 input[type=password],
+.form-box2 input[type=submit]{
+    text-align:center;
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    padding: 14px 10px;
+    border: 2px solid #17191c;
+    width: 200px;
+    outline: none;
+    color: white;
+    border-radius: 20px;
+    transition: 0.25s;
+    height:40px;
+}
+.form-box2 input[type=text]:focus,
+.form-box2 input[type=email]:focus,
+.form-box2 input[type=password]:focus {
+    width: 280px;
+    border-color: #7289DA;
+}
+.form-box2 input[type=submit] {
+    border: 0;
+    background: #7289DA;
+    cursor: pointer;
+}
+.form-box2 input[type=submit]:hover{
+    background:#c4d1ff;
+    width:280px;
+}
+.form-box3 input[type=email ],
+.form-box3 input[type=submit] {
+    text-align:center;
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    padding: 14px 10px;
+    border: 2px solid #17191c;
+    width: 200px;
+    outline: none;
+    color: white;
+    border-radius: 20px;
+    transition: 0.25s;
+    height: 50px;
+}
+.form-box3 input[type=email]:focus{
+    width:280px;
+    border-color:#7289DA;
+}
+.form-box3 input[type=submit]{
+    border:0;
+    background:#7289DA;
+    cursor:pointer;
+}
+.form-box3 input[type=submit]:hover{
+    background: #c4d1ff;
+    width: 280px;
+}
+.form-box3 input[type=email],
+.form-box3 input[type=submit] {
+    text-align:center;
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    padding: 14px 10px;
+    border: 2px solid #17191c;
+    width: 200px;
+    outline: none;
+    color: white;
+    border-radius: 20px;
+    transition: 0.25s;
+    height: 50px;
+}
+.form-box3 input[type=email]:focus{
+    width:280px;
+    border-color:#7289DA;
+}
+.form-box3 input[type=submit]{
+    border:0;
+    background:#7289DA;
+    cursor:pointer;
+}
+.form-box3 input[type=submit]:hover{
+    background: #c4d1ff;
+    width: 280px;
+}
+.form-box4 input[type=text],
+.form-box4 input[type=submit] {
+    text-align: center;
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    padding: 14px 10px;
+    border: 2px solid #17191c;
+    width: 200px;
+    outline: none;
+    color: white;
+    border-radius: 20px;
+    transition: 0.25s;
+    height: 50px;
+}
+.form-box4 input[type=text]:focus {
+    width: 280px;
+    border-color: #7289DA;
+}
+.form-box4 input[type=submit] {
+    border: 0;
+    background: #7289DA;
+    cursor: pointer;
+}
+.form-box4 input[type=submit]:hover {
+    background: #c4d1ff;
+    width: 280px;
+}
+
+
+
+footer {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    width: 100%;
+    background: #2C2F33;
+    border-top: 2px solid #17191c;
+    color: white;
+    justify-content: center;
+    align-items: center;
+}

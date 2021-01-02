@@ -1,0 +1,17 @@
+﻿@model ControlCuentasUsuario.Models.Cuentum
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{ 
+    Layout = "Layout";
+}
+    <main>
+        <h1>Crear Una cuenta</h1>
+        <a href="~/Home/Index">Volver</a>
+        <form class="form-box2" action="~/Home/Register" method="post">
+            <input type="text" asp-for="Username" placeholder="Nombre de usuario" required />
+            <input type="email" asp-for="Email" placeholder="Correo Electronico" required />
+            <input type="password" asp-for="Password" name="pass" placeholder="Crear contrasena" required />
+            <input type="password" asp-for="Password" name="pass2" placeholder="Confirmar Contrasena" required />
+            @Html.ValidationSummary()
+            <input type="submit" value="Registrar"/>
+        </form>
+    </main>
