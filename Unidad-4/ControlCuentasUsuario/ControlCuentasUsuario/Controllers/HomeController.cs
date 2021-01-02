@@ -79,7 +79,7 @@ namespace ControlCuentasUsuario.Controllers
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync();
-            return RedirectToAction("SignUp");
+            return RedirectToAction("LogIn");
         }
         [AllowAnonymous]
         public IActionResult Register()

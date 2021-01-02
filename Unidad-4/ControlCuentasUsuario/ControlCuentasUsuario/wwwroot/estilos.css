@@ -121,6 +121,65 @@ main{
     background: #c4d1ff;
     width: 280px;
 }
+.form-box3 input[type=email],
+.form-box3 input[type=submit] {
+    text-align:center;
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    padding: 14px 10px;
+    border: 2px solid #17191c;
+    width: 200px;
+    outline: none;
+    color: white;
+    border-radius: 20px;
+    transition: 0.25s;
+    height: 50px;
+}
+.form-box3 input[type=email]:focus{
+    width:280px;
+    border-color:#7289DA;
+}
+.form-box3 input[type=submit]{
+    border:0;
+    background:#7289DA;
+    cursor:pointer;
+}
+.form-box3 input[type=submit]:hover{
+    background: #c4d1ff;
+    width: 280px;
+}
+.form-box4 input[type=text],
+.form-box4 input[type=submit] {
+    text-align: center;
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    padding: 14px 10px;
+    border: 2px solid #17191c;
+    width: 200px;
+    outline: none;
+    color: white;
+    border-radius: 20px;
+    transition: 0.25s;
+    height: 50px;
+}
+.form-box4 input[type=text]:focus {
+    width: 280px;
+    border-color: #7289DA;
+}
+.form-box4 input[type=submit] {
+    border: 0;
+    background: #7289DA;
+    cursor: pointer;
+}
+.form-box4 input[type=submit]:hover {
+    background: #c4d1ff;
+    width: 280px;
+}
+
 
 
 footer {
