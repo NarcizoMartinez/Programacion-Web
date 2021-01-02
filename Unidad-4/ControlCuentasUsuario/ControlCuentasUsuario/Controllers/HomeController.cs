@@ -65,13 +65,13 @@ namespace ControlCuentasUsuario.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Esta cuenta aun no ha sido activada. Por favor verificar en su correo electronico.");
+                    ModelState.AddModelError("", "Esta cuenta aun no ha sido activada. Por favor verificar en su correo electrónico.");
                     return View(user);
                 }
             }
             else
             {
-                ModelState.AddModelError("", "El correo o la contrasena son incorrectas");
+                ModelState.AddModelError("", "El correo o la contraseña son incorrectas.");
                 return View(user);
             }
         }
@@ -108,9 +108,9 @@ namespace ControlCuentasUsuario.Controllers
                         user.Active = 0;
                         repos.Insert(user);
                         MailMessage message = new MailMessage();
-                        message.From = new MailAddress("senorvinter@gmail.com", "Skyblock Dream");
+                        message.From = new MailAddress("senorvinter@gmail.com", "Discord");
                         message.To.Add(user.Email);
-                        message.Subject = "Por favor confirma tu direccion de correo electronico de Skyblock Dream";
+                        message.Subject = "Por favor confirma tu dirección de correo electrónico de Discord";
                         string text = System.IO.File.ReadAllText(Environment.WebRootPath + "/ConfirmEmail.html");
                         message.Body = text.Replace("{##code##}", user.Token.ToString());
                         message.IsBodyHtml = true;
@@ -126,7 +126,7 @@ namespace ControlCuentasUsuario.Controllers
                     }
                     else
                     {
-                        ModelState.AddModelError("", "Las contrasenas no son iguales.");
+                        ModelState.AddModelError("", "Las contraseñas no son iguales.");
                         return View(user);
                     }
                 }
@@ -187,19 +187,19 @@ namespace ControlCuentasUsuario.Controllers
                 var user = repos.GetByEmail(email);
                 if (user.Password != HashHelper.GetHash(pass))
                 {
-                    ModelState.AddModelError("", "La contrasena Ingresada es incorrecta.");
+                    ModelState.AddModelError("", "La contraseña ingresada es incorrecta.");
                     return View();
                 }
                 else
                 {
                     if (newpass!=newpassconfirm)
                     {
-                        ModelState.AddModelError("", "Las nuevas contrasenas no coinciden.");
+                        ModelState.AddModelError("", "Las nuevas contraseñas no coinciden.");
                         return View();
                     }
                     else if (user.Password== HashHelper.GetHash(newpass))
                     {
-                        ModelState.AddModelError("", "La nueva contrasena no puede ser igual a la anterior");
+                        ModelState.AddModelError("", "La nueva contraseña no puede ser igual a la anterior");
                         return View();
                     }
                     else
@@ -233,10 +233,10 @@ namespace ControlCuentasUsuario.Controllers
                 if (user!=null)
                 {
                     var temp = CodeGeneratorHelper.GetCode();
-                    MailMessage message = new MailMessage("senorvinter@gmail.com", "Slyblock Dream");
-                    message.From = new MailAddress("senorvinter@gmail.com", "Skyblock Dream");
+                    MailMessage message = new MailMessage("senorvinter@gmail.com", "Discord");
+                    message.From = new MailAddress("senorvinter@gmail.com", "Discord");
                     message.To.Add(email);
-                    message.Subject = "Recupera tu contraseña de Skyblock Dream";
+                    message.Subject = "Recupera tu contraseña de Discord";
                     string text = System.IO.File.ReadAllText(Environment.WebRootPath + "/Recover.html");
                     message.Body = text.Replace("{##codeTemp##}", temp.ToString());
                     message.IsBodyHtml = true;
@@ -254,7 +254,7 @@ namespace ControlCuentasUsuario.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError("", "El correo" +email+ " no se encuentra registrado.");
+                    ModelState.AddModelError("", "El correo" +email+ "no se encuentra registrado.");
                     return View();
                 }
             }
@@ -286,7 +286,7 @@ namespace ControlCuentasUsuario.Controllers
                     }
                     else
                     {
-                        ModelState.AddModelError("", "La contrasena esta incorrecta");
+                        ModelState.AddModelError("", "La contraseña esta incorrecta.");
                         return View();
                     }
                 }
