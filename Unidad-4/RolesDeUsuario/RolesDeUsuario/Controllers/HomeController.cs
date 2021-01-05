@@ -226,11 +226,170 @@ namespace RolesDeUsuario.Controllers
                         return View(ma);
                     }
                 }
+                return RedirectToAction("Maestro");
             }
             catch (Exception ex)
             {
                 ModelState.AddModelError("", ex.Message);
                 return View(ma);
+            }
+        }
+        [HttpPost]
+        public IActionResult LA(int id)
+        {
+            rolesusuarioContext _context = new rolesusuarioContext();
+            DocenteRepository reposM = new DocenteRepository(_context);
+            var ma = reposM.GetAlumnoByMaestro(id);
+            if (ma!=null)
+            {
+                if (User.IsInRole("Maestro"))
+                {
+                    if (User.Claims.FirstOrDefault(x => x.Type == "IdMaestro").Value == ma.Id.ToString())
+                    {
+                        return View(ma);
+                    }
+                    else
+                    {
+                        return RedirectToAction("Denied");
+                    }
+                }
+                else if (ma.Activo!=1)
+                {
+                    return RedirectToAction("Maestro");
+                }
+                else
+                {
+                    return View(ma);
+                }
+            }
+            else
+            {
+                return RedirectToAction("Maestro");
+            }
+        }
+        [Authorize(Roles = "Director, Maestro")]
+        public IActionResult AddA(int id)
+        {
+            AlumnoViewModel _avm = new AlumnoViewModel();
+            if (_avm.Maestro!=null)
+            {
+                if (User.IsInRole("Maestro"))
+                {
+                    return View(_avm);
+                }
+                else if (_avm.Maestro.Activo!=1)
+                {
+                    return RedirectToAction("Maestro");
+                }
+                else
+                {
+                    return View(_avm);
+                }
+            }
+            return View(_avm);
+        }
+        [Authorize(Roles = "Director, Maestro")]
+        [HttpPost]
+        public IActionResult AddA(AlumnoViewModel _avm)
+        {
+            rolesusuarioContext _context = new rolesusuarioContext();
+            AlumnoRepository reposA = new AlumnoRepository(_context);
+            DocenteRepository reposM = new DocenteRepository(_context);
+            try
+            {
+                if (_context.Alumno.Any(x=>x.Ncontrol==_avm.Alumno.Ncontrol))
+                {
+                    ModelState.AddModelError("", "Ya hay un alumno con el mismo numero de control.");
+                    return View(_avm);
+                }
+                else
+                {
+                    var ma = reposM.GetByNControl(_avm.Maestro.Ncontrol).Id;
+                    _avm.Alumno.IdMaestro = ma;
+                    reposA.Insert(_avm.Alumno);
+                    return RedirectToAction("Alumno", new { id=ma});
+                }
+            }
+            catch (Exception ex)
+            {
+                _avm.Maestro = reposM.GetTById(_avm.Maestro.Id);
+                _avm.Maestro = (Maestro)reposA.GetAll();
+                ModelState.AddModelError("", ex.Message);
+                return View(_avm);
+            }
+        }
+        [Authorize(Roles = "Director, Maestro")]
+        public IActionResult EditA(int id)
+        {
+            rolesusuarioContext _context = new rolesusuarioContext();
+            AlumnoRepository reposA = new AlumnoRepository(_context);
+            DocenteRepository reposM = new DocenteRepository(_context);
+            AlumnoViewModel _avm = new AlumnoViewModel();
+            _avm.Alumno = reposA.GetTById(id);
+            _avm.Maestro = reposM.GetTById(id);
+            if (_avm.Alumno!=null)
+            {
+                _avm.Maestro = reposM.GetTById(_avm.Alumno.IdMaestro);
+                if (User.IsInRole("Maestro"))
+                {
+                    _avm.Maestro = reposM.GetTById(_avm.Alumno.IdMaestro);
+                    if (User.Claims.FirstOrDefault(x=>x.Type=="Ncontrol").Value== _avm.Maestro.Ncontrol.ToString())
+                    {
+                        return View(_avm);
+                    }
+                    else
+                    {
+                        return RedirectToAction("Denied");
+                    }
+                }
+                else if (_avm.Maestro.Activo!=1)
+                {
+                    return RedirectToAction("Maestro");
+                }
+                else
+                {
+                    return View(_avm);
+                }
+            }
+            else
+            {
+                return RedirectToAction("Main");
+            }
+        }
+        [Authorize(Roles = "Director, Maestro")]
+        [HttpPost]
+        public IActionResult EditA(AlumnoViewModel _avm)
+        {
+            rolesusuarioContext _context = new rolesusuarioContext();
+            AlumnoRepository reposA = new AlumnoRepository(_context);
+            DocenteRepository reposM = new DocenteRepository(_context);
+            try
+            {
+                var a = reposA.GetTById(_avm.Alumno.Id);
+                if (a!=null)
+                {
+                    a.Nombre = _avm.Alumno.Nombre;
+                    if (User.IsInRole("Director"))
+                    {
+                        a.IdMaestro = _avm.Alumno.IdMaestro;
+                    }
+                    reposA.Update(a);
+                    return RedirectToAction("Alumnos", new { id = a.IdMaestro });
+                }
+                else
+                {
+                    ModelState.AddModelError("", "No se ha encontrado al alumno.");
+                    _avm.Maestro = reposM.GetTById(_avm.Alumno.IdMaestro);
+                    _avm.Maestro = (Maestro)reposM.GetAll();
+                    return View(_avm);
+                }
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError("", ex.Message);
+                _avm.Maestro = reposM.GetTById(_avm.Alumno.IdMaestro);
+                _avm.Maestro = (Maestro)reposM.GetAll();
+                return View(_avm);
             }
         }
         [HttpPost]
@@ -250,6 +409,24 @@ namespace RolesDeUsuario.Controllers
                 repos.Update(mad);
             }
             return RedirectToAction("Maestro");
+        }
+
+        [Authorize(Roles = "Director, Maestro")]
+        [HttpPost]
+        public IActionResult DeleteA(Alumno _alumno)
+        {
+            rolesusuarioContext _context = new rolesusuarioContext();
+            AlumnoRepository repos = new AlumnoRepository(_context);
+            var ad = repos.GetTById(_alumno.Id);
+            if (ad!=null)
+            {
+                repos.Delete(ad);
+            }
+            else
+            {
+                ModelState.AddModelError("", "No se ha encontradoo el alumno.");
+            }
+            return RedirectToAction("Alumnos", new {id=ad.IdMaestro});
         }
         public IActionResult Denied()
         {
