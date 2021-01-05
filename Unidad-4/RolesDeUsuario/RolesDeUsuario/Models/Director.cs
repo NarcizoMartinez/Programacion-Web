@@ -7,7 +7,7 @@ namespace RolesDeUsuario.Models
     {
         public int Id { get; set; }
         public string Nombre { get; set; }
-        public string Ncontrol { get; set; }
+        public int Ncontrol { get; set; }
         public string Contrasena { get; set; }
     }
 }
