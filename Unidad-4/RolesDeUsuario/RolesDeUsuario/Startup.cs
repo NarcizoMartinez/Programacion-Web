@@ -23,8 +23,8 @@ namespace RolesDeUsuario
                     options.AccessDeniedPath = "/Home/Denied";
                     options.Cookie.Name = "Nav";
                 });
+            services.AddMvc();
         }
-
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())

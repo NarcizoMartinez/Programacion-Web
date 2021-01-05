@@ -45,7 +45,7 @@ namespace RolesDeUsuario.Controllers
                     var claimMain = new ClaimsPrincipal(claimIdentity);
                     await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, claimMain,
                     new AuthenticationProperties { IsPersistent = true });
-                    return RedirectToAction("Index");
+                    return RedirectToAction("Main");
                 }
                 else
                 {
@@ -85,7 +85,7 @@ namespace RolesDeUsuario.Controllers
                         var claimIdentity = new ClaimsIdentity(datos, CookieAuthenticationDefaults.AuthenticationScheme);
                         var claimMain = new ClaimsPrincipal(claimIdentity);
                         await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,claimMain, new AuthenticationProperties { IsPersistent=true});
-                        return RedirectToAction("Index", ma.Ncontrol);
+                        return RedirectToAction("Main", ma.Ncontrol);
                     }
                     else
                     {
