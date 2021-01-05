@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using RolesDeUsuario.Models;
+using RolesDeUsuario.Repository;
+
 
 namespace RolesDeUsuario.Controllers
 {
