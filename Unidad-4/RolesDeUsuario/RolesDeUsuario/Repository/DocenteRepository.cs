@@ -8,7 +8,7 @@ namespace RolesDeUsuario.Repository
 {
     public class DocenteRepository:RolUsuarioRepository<Maestro>
     {
-        DocenteRepository(rolesusuarioContext _context):base(_context)
+        public DocenteRepository(rolesusuarioContext _context):base(_context)
         {
 
         }
