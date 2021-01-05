@@ -1,2 +1,10 @@
-﻿body {
+﻿body,html {
+    height:100%;
+}
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #EEEEEE;
+    align-content:center;
+    display:flex;
 }
