@@ -4,7 +4,37 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #EEEEEE;
-    align-content:center;
-    display:flex;
+    background-color: #282828;
+    align-content: center;
+    display: flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+.div-form {
+    background:#EEEEEE ;
+    width:300px;
+    height: 400px;
+    align-content: center;
+    text-align: center;
+    font-family: 'Champagne & Limousines';
+    color: black;
+    filter:drop-shadow(0 0 0.75rem white);
+}
+
+
+
+footer {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    width: 100%;
+    background: #04CB00;
+    border-top: 2px solid #028F28;
+    color: white;
+    justify-content: center;
+    align-items: center;
 }
