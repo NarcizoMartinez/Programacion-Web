@@ -34,7 +34,7 @@ namespace RolesDeUsuario.Controllers
             var dir = _context.Director.FirstOrDefault(x => x.Ncontrol == _director.Ncontrol);
             try
             {
-                if (dir!=null&&dir.Contrasena==HashHelper.GetHash(dir.Contrasena))
+                if (dir!=null&&dir.Contrasena==HashHelper.GetHash(_director.Contrasena))
                 {
                     List<Claim> datos = new List<Claim>();
                     datos.Add(new Claim(ClaimTypes.Name, dir.Nombre));
