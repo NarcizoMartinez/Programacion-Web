@@ -49,7 +49,7 @@ namespace RolesDeUsuario.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError("", "El numero de control o la contrasena es incorrecta.");
+                    ModelState.AddModelError("", "El numero de control o la contraseña es incorrecta.");
                     return View(_director);
                 }
             }
