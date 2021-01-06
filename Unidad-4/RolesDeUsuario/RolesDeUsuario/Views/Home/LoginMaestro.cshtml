@@ -1,0 +1,14 @@
+﻿@model RolesDeUsuario.Models.Maestro
+@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+@{ 
+    Layout = "Layout";
+}
+    
+    <form action="~/Home/LoginM" method="post" class="form-boxG">
+       
+        <h1>Iniciar sesion</h1>
+        <input type="text" asp-for="Ncontrol" required placeholder="Numero de control"/>
+        <input type="password" asp-for="Contrasena" required placeholder="Contraseña"/>
+        <input type="submit" value="Iniciar Sesion" />
+        @Html.ValidationSummary()
+    </form>

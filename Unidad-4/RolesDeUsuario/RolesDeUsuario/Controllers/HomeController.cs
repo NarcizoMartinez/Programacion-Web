@@ -107,7 +107,7 @@ namespace RolesDeUsuario.Controllers
             }
         }
         [Authorize(Roles = "Director, Maestro")]
-        public IActionResult Home(int ncontrol)
+        public IActionResult Main(int ncontrol)
         {
             return View();
         }

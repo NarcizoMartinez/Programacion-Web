@@ -18,7 +18,7 @@ namespace RolesDeUsuario
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(
                 options =>
                 {
-                    options.LoginPath = "/Home/Login";
+                    options.LoginPath = "/Home/Index";
                     options.LogoutPath = "/Home/Logout";
                     options.AccessDeniedPath = "/Home/Denied";
                     options.Cookie.Name = "Nav";
@@ -36,6 +36,7 @@ namespace RolesDeUsuario
             app.UseFileServer();
             app.UseAuthentication();
             app.UseAuthorization();
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapDefaultControllerRoute();

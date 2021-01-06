@@ -11,19 +11,105 @@ body {
     flex-wrap:wrap;
     justify-content:center;
 }
-.div-form {
+.form-box {
+    padding:2px;
     background:#EEEEEE ;
     width:300px;
-    height: 400px;
+    height: 350px;
     align-content: center;
     text-align: center;
     font-family: 'Champagne & Limousines';
     color: black;
-    filter:drop-shadow(0 0 0.75rem white);
+    filter:drop-shadow(0 0 0.75rem black);
+}
+    .form-box img {
+        display: inline-block;
+        margin: 20px 5px;
+        align-content: center;
+        padding: 14px 10px;
+        height: 100px;
+        width: 100px;
+    }
+    .form-box input[type=button] {
+        display: inline-block;
+        align-content: center;
+        margin: 20px 5px;
+        padding: 14px 10px;
+        border-radius: 20px;
+        border: 2px solid #028F28;
+        height: 50px;
+        width: 120px;
+        cursor: pointer;
+        text-align: center;
+        outline: none;
+        background: #04CB00;
+        color: white;
+        font-size: 15px;
+        font-family: 'Champagne & Limousines';
+        transition: 0.25s;
+    }
+.form-box input[type=button]:hover {
+    height: 70px;
+    font-size: 25px;
+    background: #26FC21;
+    border: 2px solid #04CB00;
+}
+.form-boxG {
+    padding:2px;
+    display:block;
+    background: #EEEEEE;
+    width: 300px;
+    height: 350px;
+    align-content: center;
+    text-align: center;
+    font-family: 'Champagne & Limousines';
+    filter: drop-shadow(0 0 0.75rem black);
+}
+    .form-boxG input[type=text],
+    .form-boxG input[type=password] {
+        align-content: center;
+        text-align: center;
+        border: 0;
+        background: none;
+        display: block;
+        margin: 20px auto;
+        padding: 14px 10px;
+        width: 200px;
+        border-radius: 10px;
+        border-bottom: 2px solid #028F28;
+        transition:0.25s;
+    }
+        .form-boxG input[type=text]:focus,
+        .form-boxG input[type=password]:focus {
+            width: 250px;
+            background: #DBD8D8;
+            border-bottom: 2px solid #12D145;
+            outline:0;
+        }
+.form-boxG input[type=submit] {
+    display: inline-block;
+    align-content: center;
+    margin: 20px 5px;
+    padding: 14px 10px;
+    border-radius: 20px;
+    border: 2px solid #028F28;
+    height: 50px;
+    width: 120px;
+    cursor: pointer;
+    text-align: center;
+    outline: none;
+    background: #04CB00;
+    color: white;
+    font-size: 15px;
+    font-family: 'Champagne & Limousines';
+    transition: 0.25s;
 }
 
-
-
+    .form-boxG input[type=submit]:hover {
+        width: 180px;
+        background: #26FC21;
+        border: 2px solid #04CB00;
+    }
 footer {
     display: flex;
     position: fixed;
