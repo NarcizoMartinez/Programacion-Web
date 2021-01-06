@@ -4,7 +4,9 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #282828;
+    background-image:url("../background.jpg");
+    background-position:center;
+    background-size:cover;
     align-content: center;
     display: flex;
     flex-direction:row;
@@ -110,6 +112,50 @@ body {
         background: #26FC21;
         border: 2px solid #04CB00;
     }
+
+.styled-table{
+    border-collapse:collapse;
+    margin:25px 0;
+    font-size:0.9em;
+    font-family:'Champagne & Limousines';
+    min-width:400px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.15);
+}
+.styled-table thead tr{
+    background-color: #009879;
+    color:#ffff;
+    text-align:left;
+}
+.styled-table th,
+.styled-table td{
+    padding:12px 15px;
+}
+.styled-table tbody tr{
+    border-bottom:1px solid #dddddd;
+}
+.styled-table tbody tr:nth-of-type(even){
+    background-color:#f3f3f3;
+}
+.styled-table tbody ty:last-of-type{
+    border-bottom:2px solid #009879;
+}
+.styled-table tbody tr.active-row{
+    font-weight:bold;
+    color:#009879;
+}
+
+.form-boxAM {
+    padding: 2px;
+    background: #EEEEEE;
+    width: 300px;
+    height: 350px;
+    align-content: center;
+    text-align: center;
+    font-family: 'Champagne & Limousines';
+    color: black;
+    filter: drop-shadow(0 0 0.75rem black);
+}
+
 footer {
     display: flex;
     position: fixed;

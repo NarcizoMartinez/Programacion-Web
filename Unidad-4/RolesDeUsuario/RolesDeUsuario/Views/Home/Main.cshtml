@@ -1,4 +1,22 @@
 ﻿@{
     Layout = "Layout";
 }
-<h1>Main jeje</h1>
+@if (User.IsInRole("Director"))
+{
+    <form class="form-box-VM">
+        <h1>Bienvenido director @User.Claims.FirstOrDefault(x=>x.Type=="Nombre").Value</h1>
+        <a href="~/Home/ViewM">
+            <input type="button" value="Lista de maestros" />
+        </a>
+        <a href="~/Home/Logout">
+            <input type="button" value="Cerrar sesion"/>
+        </a>
+    </form>
+}
+@if (User.IsInRole("Maestro"))
+{
+    <form class="form-box-VM">
+        <h1>Bienvenido docente @User.Claims.FirstOrDefault(x=>x.Type=="Nombre").Value</h1>
+
+    </form>
+}
