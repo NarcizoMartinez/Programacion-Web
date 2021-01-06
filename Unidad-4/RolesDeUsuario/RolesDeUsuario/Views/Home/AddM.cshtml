@@ -5,13 +5,13 @@
 }
     <form action="~/Home/AddM" method="post" class="form-boxAM">
         <h1>Agregar maestro</h1>
-        <label>Numero de control:</label>
-        <input type="text" asp-for="Ncontrol" required />
-        <label>Nombre:</label>
-        <input type="text" asp-for="Nombre" required />
-        <label>Contraseña:</label>
-        <input type="password" asp-for="Contrasena" required/>
+        <a href="~/Home/ViewM">Regresar</a><br />
+        <label for="nc">Numero de control:</label>
+        <input id="nc" type="text" asp-for="Ncontrol" required /><br />
+        <label for="name">Nombre:</label>
+        <input id="name" type="text" asp-for="Nombre" required /><br />
+        <label for="pwd">Contraseña:</label>
+        <input id="pwd" type="password" asp-for="Contrasena" required />
         @Html.ValidationSummary()
         <input type="submit" value="Agregar" />
-        <a href="~/Home/ViewM">Regresar</a>
     </form>

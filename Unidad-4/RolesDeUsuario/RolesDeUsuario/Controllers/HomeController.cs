@@ -148,7 +148,7 @@ namespace RolesDeUsuario.Controllers
                     _maestro.Activo = 1;
                     _maestro.Contrasena = HashHelper.GetHash(_maestro.Contrasena);
                     repos.Insert(_maestro);
-                    return RedirectToAction("Maestro");
+                    return RedirectToAction("ViewM");
                 }
             }
             catch (Exception ex)
