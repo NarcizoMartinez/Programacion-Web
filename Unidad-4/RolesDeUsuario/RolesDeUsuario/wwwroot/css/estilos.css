@@ -131,7 +131,7 @@ a {
 .styled-table td{
     padding:12px 15px;
 }
-    .styled-table tbody tr:nth-of-type(even) {
+.styled-table tbody tr:nth-of-type(even) {
         background-color: #FFFFFF;
     }
 .styled-table tbody ty:last-of-type{
@@ -145,7 +145,7 @@ a {
     margin:20px auto;
     padding: 2px;
     background: #EEEEEE;
-    width: 420px;
+    width: 350px;
     height: 450px;
     align-content: center;
     text-align: center;
@@ -168,7 +168,13 @@ a {
         transition: 0.25s;
         outline: 0;
     }
-
+.form-boxAM input[type=text]:focus,
+.form-boxAM input[type=password]:focus {
+    width: 250px;
+    background: #DBD8D8;
+    border-bottom: 2px solid #12D145;
+    outline: 0;
+}
     .form-boxAM input[type=submit] {
         display: inline-block;
         align-content: center;
@@ -203,6 +209,7 @@ a {
     font-family: ' Champagne & Limousines';
     color: black;
     filter: drop-shadow(0 0 0.75rem black);
+    color:white;
 }
 .form-boxVM input[type=submit] {
     display: inline-block;
@@ -222,7 +229,23 @@ a {
     font-family: 'Champagne & Limousines';
     transition: 0.25s;
 }
-
+.AddT input[type=button] {
+    align-content: center;
+    margin: 20px 5px;
+    padding: 14px 10px;
+    border-radius: 20px;
+    border: 0;
+    height: 50px;
+    width: 120px;
+    cursor: pointer;
+    text-align: center;
+    outline: none;
+    background: #009879;
+    color: white;
+    font-size: 15px;
+    font-family: 'Champagne & Limousines';
+    transition: 0.25s;
+}
 footer {
     display: flex;
     position: fixed;
