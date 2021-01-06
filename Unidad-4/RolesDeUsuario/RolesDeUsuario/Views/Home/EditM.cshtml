@@ -1,1 +1,22 @@
-﻿
+﻿@model RolesDeUsuario.Models.Maestro
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = "Layout"; 
+    }
+
+        <form method="post" action="~/Home/EditM" class="form-boxEM">
+            <h1>Modificar informacion</h1>
+            <input type="hidden" asp-for="Id" />
+            <br />
+            <label>Núm. de control:</label>
+            <input type="text" asp-for="Ncontrol" required readonly />
+            <br />
+            <label >Nombre:</label>
+            <input type="text" asp-for="Nombre" required />
+            <br />
+            @Html.ValidationSummary()
+            <input type="submit" value="Modificar" />
+            <a href="~/Home/ViewM">
+                <input type="submit" value="Regresar" />
+            </a>
+        </form>

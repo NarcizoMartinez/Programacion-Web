@@ -169,13 +169,13 @@ a {
         outline: 0;
     }
 .form-boxAM input[type=text]:focus,
-.form-boxAM input[type=password]:focus {
+.form-boxAM input[type=password]:focus{
     width: 250px;
     background: #DBD8D8;
     border-bottom: 2px solid #12D145;
     outline: 0;
 }
-    .form-boxAM input[type=submit] {
+.form-boxAM input[type=submit] {
         display: inline-block;
         align-content: center;
         margin: 20px 5px;
@@ -193,10 +193,10 @@ a {
         font-family: 'Champagne & Limousines';
         transition: 0.25s;
     }
-        .form-boxAM input[type=submit]:hover {
-            width: 180px;
-            background: #2CECC5;
-        }
+.form-boxAM input[type=submit]:hover{
+    width: 180px;
+    background: #2CECC5;
+}
 .form-boxVM {
     display: block;
     margin: 20px auto;
@@ -246,6 +246,37 @@ a {
     font-family: 'Champagne & Limousines';
     transition: 0.25s;
 }
+.form-boxEM {
+    display: block;
+    margin: 20px auto;
+    padding: 2px;
+    background: #EEEEEE;
+    width: 350px;
+    height: 450px;
+    align-content: center;
+    text-align: center;
+    font-family: ' Champagne & Limousines';
+    color: black;
+    filter: drop-shadow(0 0 0.75rem black);
+}
+    .form-boxEM input[type=button] {
+        display: inline-block;
+        align-content: center;
+        margin: 20px 5px;
+        padding: 14px 10px;
+        border-radius: 20px;
+        border: 0;
+        height: 50px;
+        width: 120px;
+        cursor: pointer;
+        text-align: center;
+        outline: none;
+        background: #009879;
+        color: white;
+        font-size: 15px;
+        font-family: 'Champagne & Limousines';
+        transition: 0.25s;
+    }
 footer {
     display: flex;
     position: fixed;
