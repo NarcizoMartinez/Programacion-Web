@@ -7,6 +7,9 @@
                 <th>Num. Control</th>
                 <th>Nombre</th>
                 <th>Activo</th>
+                <th></th>
+                <th></th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -16,7 +19,19 @@
                     <td>@maestro.Id</td>
                     <td>@maestro.Ncontrol</td>
                     <td>@maestro.Nombre</td>
-                     <td>@maestro.Activo</td>
+                    <td>@maestro.Activo</td>
+                     @if (maestro.Activo==1)
+                     {
+                         <td>
+                             <a href="~/Home/LA/@maestro.Id/">Lista Alumnos</a>
+                         </td>
+                         <td>
+                             <a href="~/Home/EditM/@maestro.Id">Modificar</a>
+                         </td>
+                         <td>
+                             <a href="~/Home/ChangePass/@maestro.Id">Cambiar contraseña</a>
+                         </td>
+                     }
                  </tr>
             }
             <tr class="active-row">
@@ -28,3 +43,4 @@
         </tbody>
     </table>
     <a href="~/Home/AddM">Añadir a un nuevo maestro</a>
+

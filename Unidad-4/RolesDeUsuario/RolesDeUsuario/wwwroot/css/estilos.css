@@ -38,24 +38,23 @@ body {
         margin: 20px 5px;
         padding: 14px 10px;
         border-radius: 20px;
-        border: 2px solid #028F28;
+        border:0;
         height: 50px;
         width: 120px;
         cursor: pointer;
         text-align: center;
         outline: none;
-        background: #04CB00;
+        background: #009879;
         color: white;
         font-size: 15px;
         font-family: 'Champagne & Limousines';
         transition: 0.25s;
     }
-.form-box input[type=button]:hover {
-    height: 70px;
-    font-size: 25px;
-    background: #26FC21;
-    border: 2px solid #04CB00;
-}
+        .form-box input[type=button]:hover {
+            height: 70px;
+            font-size: 25px;
+            background: #2CECC5;
+        }
 .form-boxG {
     padding:2px;
     display:block;
@@ -88,41 +87,40 @@ body {
             border-bottom: 2px solid #12D145;
             outline:0;
         }
-.form-boxG input[type=submit] {
-    display: inline-block;
-    align-content: center;
-    margin: 20px 5px;
-    padding: 14px 10px;
-    border-radius: 20px;
-    border: 2px solid #028F28;
-    height: 50px;
-    width: 120px;
-    cursor: pointer;
-    text-align: center;
-    outline: none;
-    background: #04CB00;
-    color: white;
-    font-size: 15px;
-    font-family: 'Champagne & Limousines';
-    transition: 0.25s;
-}
+    .form-boxG input[type=submit] {
+        display: inline-block;
+        align-content: center;
+        margin: 20px 5px;
+        padding: 14px 10px;
+        border-radius: 20px;
+        border: 0;
+        height: 50px;
+        width: 120px;
+        cursor: pointer;
+        text-align: center;
+        outline: none;
+        background: #009879;
+        color: white;
+        font-size: 15px;
+        font-family: 'Champagne & Limousines';
+        transition: 0.25s;
+    }
 
     .form-boxG input[type=submit]:hover {
         width: 180px;
-        background: #26FC21;
-        border: 2px solid #04CB00;
+        background: #2CECC5;
     }
 a {
     color:#7289DA;
-    display:block;  
 }
-.styled-table{
-    border-collapse:collapse;
-    margin:25px 0;
-    font-size:0.9em;
-    font-family:'Champagne & Limousines';
-    min-width:400px;
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: 'Champagne & Limousines';
+    min-width: 400px;
     box-shadow: 0 0 20px rgba(0,0,0,0.15);
+    background: #D0D5D3;
 }
 .styled-table thead tr{
     background-color: #009879;
@@ -133,17 +131,13 @@ a {
 .styled-table td{
     padding:12px 15px;
 }
-.styled-table tbody tr{
-    border-bottom:1px solid #dddddd;
-}
-.styled-table tbody tr:nth-of-type(even){
-    background-color:#f3f3f3;
-}
+    .styled-table tbody tr:nth-of-type(even) {
+        background-color: #FFFFFF;
+    }
 .styled-table tbody ty:last-of-type{
     border-bottom:2px solid #009879;
 }
 .styled-table tbody tr.active-row{
-    font-weight:bold;
     color:#009879;
 }
 .form-boxAM {
@@ -170,24 +164,24 @@ a {
         padding: 14px 10px;
         width: 200px;
         border-radius: 10px;
-        border-bottom: 2px solid #028F28;
+        border-bottom: 2px solid #009879;
         transition: 0.25s;
-        outline:0;
+        outline: 0;
     }
-    
+
     .form-boxAM input[type=submit] {
         display: inline-block;
         align-content: center;
         margin: 20px 5px;
         padding: 14px 10px;
         border-radius: 20px;
-        border: 2px solid #028F28;
+        border: 0;
         height: 50px;
         width: 120px;
         cursor: pointer;
         text-align: center;
         outline: none;
-        background: #04CB00;
+        background: #009879;
         color: white;
         font-size: 15px;
         font-family: 'Champagne & Limousines';
@@ -195,9 +189,40 @@ a {
     }
         .form-boxAM input[type=submit]:hover {
             width: 180px;
-            background: #26FC21;
-            border: 2px solid #04CB00;
+            background: #2CECC5;
         }
+.form-boxVM {
+    display: block;
+    margin: 20px auto;
+    padding: 2px;
+    background: #EEEEEE;
+    width: 420px;
+    height: 450px;
+    align-content: center;
+    text-align: center;
+    font-family: ' Champagne & Limousines';
+    color: black;
+    filter: drop-shadow(0 0 0.75rem black);
+}
+.form-boxVM input[type=submit] {
+    display: inline-block;
+    align-content: center;
+    margin: 20px 5px;
+    padding: 14px 10px;
+    border-radius: 20px;
+    border: 0;
+    height: 50px;
+    width: 120px;
+    cursor: pointer;
+    text-align: center;
+    outline: none;
+    background: #009879;
+    color: white;
+    font-size: 15px;
+    font-family: 'Champagne & Limousines';
+    transition: 0.25s;
+}
+
 footer {
     display: flex;
     position: fixed;
@@ -206,7 +231,7 @@ footer {
     right: 0;
     height: 60px;
     width: 100%;
-    background: #04CB00;
+    background: #009879;
     border-top: 2px solid #028F28;
     color: white;
     justify-content: center;
